@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User
 from rest_framework import serializers
-from .models import Proflie, Location, Spot, Review, Booking, Image
+from .models import Profile, Location, Spot, Review, Booking, Image
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:

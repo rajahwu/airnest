@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User
 from rest_framework import viewsets, permissions
-from .model import Proflie, Location, Sopt, Review, Booking, Image
+from .models import Profile, Location, Spot, Review, Booking, Image
 from api.serializers import UserSerializer, ProfileSerializer, LocationSerializer, SpotSerializer, ReviewSerializer, BookingSerializer, ImageSerializer
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -12,8 +12,8 @@ class UserViewSet(viewsets.ModelViewSet):
     permission_classes = [permissions.IsAuthenticated]
 
 class ProfleViewSet(viewsets.ModelViewSet):
-    queryset = Proflie.objects.all()
-    serializer_class = ProflieSerializer
+    queryset = Profile.objects.all()
+    serializer_class = ProfileSerializer
 
 class LocationViewSet(viewsets.ModelViewSet):
     queryset = Location.objects.all()

@@ -16,18 +16,18 @@ class Location(models.Model):
 class Spot(models.Model):
     description = models.CharField(max_length=255)
     price = models.IntegerField()
-    owner = models.ForeignKey(User, on_delete=models.CASCADE)
+    owner = models.ForeignKey(Profile, on_delete=models.CASCADE)
     address = models.ForeignKey(Location, on_delete=models.CASCADE)
 
 class Review(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
     spot = models.ForeignKey(Spot, on_delete=models.CASCADE)
     review = models.TextField()
     stars = models.IntegerField()
 
 class Booking(models.Model):
     spot = models.ForeignKey(Spot, on_delete=models.CASCADE)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
     start_date = models.DateTimeField()
     end_date = models.DateTimeField()
 
