@@ -3,8 +3,6 @@ from rest_framework import viewsets, permissions
 from .model import Proflie, Location, Sopt, Review, Booking, Image
 from api.serializers import UserSerializer, ProfileSerializer, LocationSerializer, SpotSerializer, ReviewSerializer, BookingSerializer, ImageSerializer
 
-
-
 class UserViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows users to be viewed or edited.
